@@ -32,14 +32,14 @@ const students: Array<studentsType> = [
     }
 ]
 
-function getName(item:any, i:number) {
+function getName(item: any, i:number) {
     return `Index ${i}, My name is ${item.name}`
 }
 
 
 
 
-const mapIt = (array: Array<any>, callback: Function) => {
+const mapIt = (array: Array<studentsType>, callback: Function) => {
     const newArray = []
     for (let i = 0; i < array.length; i++) {
         newArray[i] = callback(array[i], i)
@@ -50,10 +50,10 @@ const mapIt = (array: Array<any>, callback: Function) => {
 console.log(mapIt(students, getName))
 console.log(students.map(s => s)) /// Поверхностная копия
 console.log(students.map(s => ({...s}))) /// Глубокая копия
-console.log(students.map(s => s.name === "Bob" ? {...s, s: s.scores + 10} : s))
+console.log(students.map(s => s.name === "Bob" ? {...s, scores: s.scores + 10} : s))
 
 
-const filterIt = (array: Array<any>, callback: Function ) => {
+const filterIt = (array: Array<studentsType>, callback: Function ) => {
     const newArray = []
     for (let i = 0; i < array.length; i++) {
         if(callback(array[i]) === true) {
@@ -66,7 +66,7 @@ const filterIt = (array: Array<any>, callback: Function ) => {
 console.log(students.filter(s => s.scores >= 100))
 console.log(filterIt(students, (s: studentsType) => s.scores >= 100))
 
-const findIt = (array: Array<any>, callback: Function) => {
+const findIt = (array: Array<studentsType>, callback: Function) => {
     for (let i = 0; i < array.length; i++) {
         if(callback(array[i])) return array[i]
     }
