@@ -32,11 +32,9 @@ const students: Array<studentsType> = [
     }
 ]
 
-function getName(item: any, i:number) {
+function getName(item: any, i: number) {
     return `Index ${i}, My name is ${item.name}`
 }
-
-
 
 
 const mapIt = (array: Array<studentsType>, callback: Function) => {
