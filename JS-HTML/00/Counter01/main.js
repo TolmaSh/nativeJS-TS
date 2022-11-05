@@ -15,7 +15,9 @@ const counter = {
     },
 };
 refs.incrementBtn.addEventListener(`click`, function () {
+    console.log(counter.value)
     counter.increment ();
+    console.log(counter.value)
     refs.valueEl.textContent = counter.value;
 });
 refs.decrementBtn.addEventListener(`click`, function () {
