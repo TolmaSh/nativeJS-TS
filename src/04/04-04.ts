@@ -5,13 +5,13 @@ export type cityType = {
     governmentBuildings: governmentBuildingsType[],
     citizensNumber: number
 }
-type housesType ={
+export type housesType ={
     id:number,
     buildedAt: number,
     repaired: boolean,
     address: addressesType
 }
-type addressesType = {
+export type addressesType = {
     number: number,
     street: {title: string}
 }
