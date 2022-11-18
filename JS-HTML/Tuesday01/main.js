@@ -72,7 +72,7 @@ console.log(students.sort((a,b) => {
         } else {
             return  1
         }
-    }
+    } 
 }))  // sort from score and age students
 
 
