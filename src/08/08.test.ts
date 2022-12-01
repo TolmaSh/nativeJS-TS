@@ -6,35 +6,35 @@ import {
     getSquarePositiveIntegers,
     sum,
     sumFirstNumbers
-} from "./08";
+} from './08';
 
 
-test("sum", () => {
+test('sum', () => {
     expect(sum(3, 5, 7, 6, 4, 9)).toBe(34)
     expect(sum(1, 1, 1, 6)).toBe(9)
 })
 
-test("get Triangle Type", () => {
-    expect(getTriangleType(1, 1, 1)).toBe("10")
-    expect(getTriangleType(2, 3, 3)).toBe("01")
-    expect(getTriangleType(3, 3, 2)).toBe("01")
-    expect(getTriangleType(4, 5, 3)).toBe("11")
-    expect(getTriangleType(10, 2, 2)).toBe("00")
+test('get Triangle Type', () => {
+    expect(getTriangleType(1, 1, 1)).toBe('10')
+    expect(getTriangleType(2, 3, 3)).toBe('01')
+    expect(getTriangleType(3, 3, 2)).toBe('01')
+    expect(getTriangleType(4, 5, 3)).toBe('11')
+    expect(getTriangleType(10, 2, 2)).toBe('00')
 })
 
-test("get Sum ", () => {
+test('get Sum ', () => {
     expect(getSum(1000)).toBe(1)
     expect(getSum(0)).toBe(0)
     expect(getSum(1234)).toBe(10)
     expect(getSum(9999)).toBe(36)
 })
-test("is Even Sum Greater", () => {
+test('is Even Sum Greater', () => {
     expect(isEvenIndexSumGreater([1, 100, 2, 200])).toBe(false)
     expect(isEvenIndexSumGreater([100, 1, 200, 2])).toBe(true)
     expect(isEvenIndexSumGreater([100, 1, 200, 2, 300, 4])).toBe(true)
     expect(isEvenIndexSumGreater([100, 1, 200, 2, 4])).toBe(true)
 })
-test("get Square Only Of Positive Integers", () => {
+test('get Square Only Of Positive Integers', () => {
     const array = [4, 5.6, -9.8, 3.14, 10, 6, 8.34, -2]
     const len = array.length
     const result = getSquarePositiveIntegers(array)
@@ -45,12 +45,12 @@ test("get Square Only Of Positive Integers", () => {
     expect(result[1]).toBe(100)
     expect(result[2]).toBe(36)
 })
-test("sum of first N numbers", () => {
+test('sum of first N numbers', () => {
     expect(sumFirstNumbers(0)).toBe(0)
     expect(sumFirstNumbers(4)).toBe(10)
     expect(sumFirstNumbers(10)).toBe(55)
 })
-test("get banknote list", () => {
+test('get banknote list', () => {
     // надо бы проверять длинну резалтов и их сумму
     const result2500 = getBanknoteList(2500)
     const result23 = getBanknoteList(23)
@@ -61,4 +61,25 @@ test("get banknote list", () => {
     expect(result23[1]).toBe(2)
     expect(result23[2]).toBe(1)
 
+})
+
+type UsersType = {
+    [key: string]: { id: number, name: string }
+}
+
+let users: UsersType = {}
+
+beforeEach(() => {
+    users = {
+        '101': {id: 101, name: 'Dimych'},
+        '3232312': {id: 3232312, name: 'Natasha'},
+        '1212': {id: 1212, name: 'Valera'},
+        '1': {id: 1, name: 'Katya'}
+    }
+})
+
+test('should update corresponding user', () => {
+    users[1].name = 'Ekaterina'
+
+    expect(users['1']).toEqual( {id: 1, name: 'Ekaterina'} )
 })
