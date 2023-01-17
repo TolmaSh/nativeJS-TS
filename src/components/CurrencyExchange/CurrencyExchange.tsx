@@ -1,5 +1,4 @@
 import React from 'react';
-
 type CurrencyExchangePropsType = {
     currenciesName: string[];
     currentCurrency: string;
