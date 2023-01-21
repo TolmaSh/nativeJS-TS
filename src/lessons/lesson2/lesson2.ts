@@ -23,16 +23,25 @@ console.log('lesson 2');
 
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
+    function sum(a: number) {
+        let currentSum = a;
+        function sum2(b:number) {
+            return currentSum += b
+        }
+        return sum2
+    }
+    console.log(sum(3)(6))
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
+//
 // const counter = makeCounter();
 // counter(); // 1
 // counter(); // 2
 // const counter2 = makeCounter();
 // counter2(); // 1
 // counter(); // 3
-
+//
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
